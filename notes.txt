@@ -1,0 +1,2 @@
+3rd of May
+Consider downsampling the 0 class and checking the accuracy scores
