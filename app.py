@@ -41,11 +41,25 @@ def get_df_and_predict():
                 model = pickle.load(file)
                 pred_value = model.predict(df)
                 if pred_value==1:
-                        pred="Customer will leave"
+                        pred="Customer will leave 😥"
                 else:
-                        pred="Customer will not leave"
+                        pred="Customer will not leave 😃"
                         
         return pred
+
+pred="Calculating Churn"
+
+#Main Frontend
+st.set_page_config(
+        page_title="Bank Churn Predictor",
+        page_icon="🚨",
+        layout='wide',
+        menu_items={
+                "Get Help": None,
+                "Report a Bug": None,
+                "About": None
+        }
+)
 
 with st.form('Bank_Churn_Predictor'):
         st.title("Bank Churn Predictor")
@@ -68,7 +82,9 @@ with st.form('Bank_Churn_Predictor'):
         submitted = st.form_submit_button("Predict")
         if submitted:
                 pred=get_df_and_predict()
-                
+
+              
+st.title("Outcome")
 st.title(pred)
                 
 
